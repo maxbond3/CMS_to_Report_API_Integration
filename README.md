@@ -9,8 +9,9 @@ Automated data synchronization pipeline built using **n8n**, **PostgreSQL**, and
 ## 📁 Repository Structure / Структура репозитория
 
 * `compose.yml` - Multi-container stack (n8n + AI Sandboxes + SearXNG + Postgres `db`).
+* `volume-backup.tar` - Pre-populated Docker volume data backup for immediate database initialization.
 * `n8n_workflow_CMS to Report API Integration.json` - Complete production n8n workflow.
-* `create_table_query_for_postgres.sql` - SQL script to initialize the database schema.
+* `create_table_query_for_postgres.sql` - SQL script to initialize the database schema manually.
 * `searxng-settings.yml` - Configuration file for SearXNG engine.
 * `.env_example` - Template file containing database keys and environment ports.
 * `.gitignore` - Rule file to ensure local session folders and active `.env` stay private.
@@ -54,9 +55,16 @@ docker compose up -d
 * *RU:* Примените конфигурацию и запустите фоновые службы с помощью Docker Compose. Интерфейс n8n будет доступен по адресу выше.
 
 ### 4. Initialize the Database / Инициализация базы данных
-Execute the contents of `create_table_query_for_postgres.sql` inside your PostgreSQL database to construct the table schema before running the workflow.
 
-*RU:* Выполните содержимое файла `create_table_query_for_postgres.sql` внутри вашей СУБД PostgreSQL, чтобы создать таблицу для хранения истории перед запуском сценария.
+#### Option A: Automated Restoration (Recommended) / Вариант А: Автоматическое восстановление
+The stack includes a `db-init` sidecar container. If the root folder contains `volume-backup.tar`, running `docker compose up -d` will automatically restore pre-seeded database schemas and relational data tables on the very first boot.
+
+*RU:* Стек включает в себя вспомогательный контейнер `db-init`. Если в корневой директории присутствует файл `volume-backup.tar`, команда `docker compose up -d` автоматически восстановит структуру схем и таблицы данных при самом первом запуске СУБД.
+
+#### Option B: Manual SQL Setup / Вариант Б: Ручная настройка через SQL
+If you do not have the backup tarball file, execute the contents of `create_table_query_for_postgres.sql` inside your PostgreSQL database to construct the clean table schema manually before running the workflow.
+
+*RU:* Если архив резервной копии отсутствует, выполните содержимое файла `create_table_query_for_postgres.sql` внутри вашей СУБД PostgreSQL для ручной сборки пустой таблицы перед запуском основного сценария.
 
 ---
 

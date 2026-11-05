@@ -107,6 +107,32 @@ services:
     volumes:
       - ./searxng-settings.yml:/etc/searxng/settings.yml:ro
     # Internal-only: n8n reaches it by service name. Never publish its port.
+
+  db-init:
+      image: alpine
+      volumes:
+        - postgres-data:/var/lib/postgresql/data
+        - .:/backup
+      # Checks if the volume is empty and if the tar file exists. If true, it extracts it.
+      command: >
+        sh -c "if [ -z \"$(ls -A /var/lib/postgresql/data)\" ] && [ -f /backup/volume-backup.tar ]; then
+                 echo 'Empty volume detected. Extracting backup...';
+                 tar xvf /backup/volume-backup.tar -C /var/lib/postgresql/data;
+               else
+                 echo 'Volume already has data or backup file is missing. Skipping extraction.';
+               fi"
+
+  # db-init:
+  #   image: alpine
+  #   volumes:
+  #     - postgres-data:/var/lib/postgresql/data
+  #     - .:/backup
+  #   command: >
+  #     sh -c "echo '--- CURRENT PATH INSIDE CONTAINER ---' && pwd &&
+  #             echo '--- CONTENTS OF /backup FOLDER ---' && ls -la /backup &&
+  #             echo '--- CONTENTS OF POSTGRES DATA VOL ---' && ls -la /var/lib/postgresql/data"
+
+
   db:
     container_name: ${DB_HOST}
     image: postgres:15
@@ -117,3 +143,6 @@ services:
       PGPORT: ${DB_PORT}
     volumes:
       - postgres-data:/var/lib/postgresql/data
+    depends_on:
+      db-init:
+        condition: service_completed_successfully
