@@ -1,0 +1,363 @@
+{
+  "name": "CMS to Report API Integration",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "=http://{{ $env.API_HOST }}:{{ $env.API_PORT }}/cms/spares",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "options": {
+          "pagination": {
+            "pagination": {
+              "parameters": {
+                "parameters": [
+                  {
+                    "name": "page",
+                    "value": "={{ $pageCount }}"
+                  },
+                  {
+                    "name": "size",
+                    "value": "10"
+                  }
+                ]
+              },
+              "paginationCompleteWhen": "other",
+              "completeExpression": "={{ $response.body.length === 0 }}"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        -144,
+        -112
+      ],
+      "id": "8e980eef-1f73-4cd6-b2b3-9b1c4d955ca6",
+      "name": "GET /cms/spares",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "0ywCm4F3cJM79YFy",
+          "name": "Username and password"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "spares",
+          "mode": "list",
+          "cachedResultName": "spares"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "spare_code": "={{ $json.spareCode }}",
+            "spare_name": "={{ $json.spareName }}",
+            "spare_description": "={{ $json.spareDescription }}",
+            "spare_type": "={{ $json.spareType }}",
+            "spare_status": "={{ $json.spareStatus }}",
+            "price": "={{ $json.price }}",
+            "quantity": "={{ $json.quantity }}",
+            "updated_at": "={{ $json.updatedAt }}"
+          },
+          "matchingColumns": [
+            "spare_code"
+          ],
+          "schema": [
+            {
+              "id": "spare_code",
+              "displayName": "spare_code",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "spare_name",
+              "displayName": "spare_name",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "spare_description",
+              "displayName": "spare_description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "spare_type",
+              "displayName": "spare_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "spare_status",
+              "displayName": "spare_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "price",
+              "displayName": "price",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "quantity",
+              "displayName": "quantity",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "updated_at",
+              "displayName": "updated_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.8,
+      "position": [
+        80,
+        -112
+      ],
+      "id": "c1a9c7dc-b11e-41da-a6cd-d3c8addf55bd",
+      "name": "DB: Upsert Spares",
+      "executeOnce": false,
+      "credentials": {
+        "postgres": {
+          "id": "TXoxogZYsrrVnmID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "spares",
+          "mode": "list",
+          "cachedResultName": "spares"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.8,
+      "position": [
+        304,
+        -112
+      ],
+      "id": "51b33b2f-8333-4484-b050-308906a7174c",
+      "name": "DB: Select Clean Data",
+      "executeOnce": true,
+      "credentials": {
+        "postgres": {
+          "id": "TXoxogZYsrrVnmID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "pythonNative",
+        "pythonCode": "csv_lines = []\n\nfor item in _items:\n    row = item.get('json', {})\n    \n    # Order matches your database schema fields precisely\n    columns = [\n        row.get('spare_code'),\n        row.get('spare_name'),\n        row.get('spare_description'),\n        row.get('spare_type'),\n        row.get('spare_status'),\n        row.get('price'),\n        row.get('quantity'),\n        row.get('updated_at')\n    ]\n    \n    # Convert everything to string, converting None/null to an empty string ''\n    line = \";\".join(str(val) if val is not None else '' for val in columns)\n    csv_lines.append(line)\n\nraw_csv_text = \"\\n\".join(csv_lines)\n\nreturn [{\"json\": {\"csvData\": raw_csv_text}}]\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        528,
+        -112
+      ],
+      "id": "fe6b4797-24f0-4eb3-ae28-d9632d1df2b9",
+      "name": "Format: Matrix to CSV"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://{{ $env.API_HOST }}:{{ $env.API_PORT }}/auth/token",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"username\": \"{{ $env.API_USERNAME }}\",\n  \"password\": \"{{ $env.API_PASSWORD }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        752,
+        -112
+      ],
+      "id": "d8e3389b-f2a9-4d9c-8ac8-7c768d78391d",
+      "name": "POST /auth/login"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://{{ $env.API_HOST }}:{{ $env.API_PORT }}/report/csv",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $json.token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "text/csv; charset=utf-8",
+        "body": "={{ $('Format: Matrix to CSV').first().json.csvData }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        976,
+        -112
+      ],
+      "id": "45e12b3c-7e50-4c86-b51b-63f32f89a423",
+      "name": "POST /report/csv"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -368,
+        -112
+      ],
+      "id": "84697055-28cb-488f-a5c8-bf4750e70f8c",
+      "name": "When clicking ‘Execute workflow’"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "GET /cms/spares": {
+      "main": [
+        [
+          {
+            "node": "DB: Upsert Spares",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DB: Upsert Spares": {
+      "main": [
+        [
+          {
+            "node": "DB: Select Clean Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DB: Select Clean Data": {
+      "main": [
+        [
+          {
+            "node": "Format: Matrix to CSV",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format: Matrix to CSV": {
+      "main": [
+        [
+          {
+            "node": "POST /auth/login",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "POST /auth/login": {
+      "main": [
+        [
+          {
+            "node": "POST /report/csv",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "GET /cms/spares",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "3cffe8c7-6f66-4060-bb71-597fcc0cdb0f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "367ecc073a0815d1894217762c6ce35c5ac42281ac6755c8f2a78804997c3b3e"
+  },
+  "nodeGroups": [],
+  "id": "d2Vcx28QUotVs1iK",
+  "tags": []
+}
