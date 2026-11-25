@@ -6,7 +6,7 @@
 
 ## 📁 Структура репозитория
 
-* `compose.yml` — Конфигурация Docker-стека (n8n, PostgreSQL, изолированные песочницы AI и SearXNG).
+* `compose.yml` — Конфигурация облегчённого Docker-стека (n8n, PostgreSQL и task runners без лишних AI-модулей).
 * `db/` — Инициализация базы данных:
   * `01_create_spares_table.sql` — Создание таблицы `spares`.
   * `02_seed_spares_data.sh` — Автоматическая загрузка начальных данных из JSON при первом запуске.
@@ -14,7 +14,6 @@
 * `n8n/` — Автоматическая настройка n8n:
   * `workflow.json` — Готовый воркфлоу интеграции.
   * `credentials.json` — Шаблоны учетных данных (подтягивают значения из переменных окружения).
-* `searxng-settings.yml` — Конфигурация поискового движка SearXNG.
 * `.env_example` — Шаблон переменных окружения.
 * `.gitignore` — Правила исключения локальных файлов и `.env` из Git.
 
@@ -24,7 +23,7 @@
 
 1. **Клонируйте репозиторий:**
    ```bash
-   git clone https://github.com/maxbond3/CMS_to_Report_API_Integration
+   git clone https://github.com/maxbond3/CMS_to_Report_API_Integration.git
    cd CMS_to_Report_API_Integration
    ```
 
@@ -38,7 +37,7 @@
    ```bash
    docker compose up -d
    ```
-   При первом запуске автоматически создастся таблица в PostgreSQL, загрузятся начальные данные, импортируются учетные данные и активируется воркфлоу.
+   При первом запуске автоматически создастся таблица в PostgreSQL, загрузятся начальные данные из JSON, импортируются учетные данные и опубликуется воркфлоу.
 
 4. **Откройте интерфейс n8n:**
    Перейдите по адресу [http://localhost:5678](http://localhost:5678) и создайте локальную учетную запись администратора.
