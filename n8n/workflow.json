@@ -3,7 +3,7 @@
   "nodes": [
     {
       "parameters": {
-        "url": "=http://{{ $env.API_HOST }}:{{ $env.API_PORT }}/cms/spares",
+        "url": "=http://{{ $env.API_URL }}/cms/spares",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpBasicAuth",
         "options": {
@@ -30,15 +30,15 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.5,
       "position": [
-        -144,
-        -112
+        224,
+        0
       ],
-      "id": "8e980eef-1f73-4cd6-b2b3-9b1c4d955ca6",
+      "id": "2989a65c-ecb6-4366-a53d-e3c4971df918",
       "name": "GET /cms/spares",
       "credentials": {
         "httpBasicAuth": {
-          "id": "0ywCm4F3cJM79YFy",
-          "name": "Username and password"
+          "id": "JNT29Tra9C6t1w7x",
+          "name": "API_Credentials"
         }
       }
     },
@@ -161,15 +161,15 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.8,
       "position": [
-        80,
-        -112
+        448,
+        0
       ],
-      "id": "c1a9c7dc-b11e-41da-a6cd-d3c8addf55bd",
+      "id": "0d75e6db-3e5e-4bfc-9b58-5b802afd24c4",
       "name": "DB: Upsert Spares",
       "executeOnce": false,
       "credentials": {
         "postgres": {
-          "id": "TXoxogZYsrrVnmID",
+          "id": "Ac1n4WihUaycXsla",
           "name": "Postgres account"
         }
       }
@@ -193,15 +193,15 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.8,
       "position": [
-        304,
-        -112
+        672,
+        0
       ],
-      "id": "51b33b2f-8333-4484-b050-308906a7174c",
+      "id": "522fa0d1-ea4f-4769-b009-265ac5130719",
       "name": "DB: Select Clean Data",
       "executeOnce": true,
       "credentials": {
         "postgres": {
-          "id": "TXoxogZYsrrVnmID",
+          "id": "Ac1n4WihUaycXsla",
           "name": "Postgres account"
         }
       }
@@ -214,16 +214,16 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        528,
-        -112
+        896,
+        0
       ],
-      "id": "fe6b4797-24f0-4eb3-ae28-d9632d1df2b9",
+      "id": "c224b9bd-df09-4ad7-bfd7-68e8db5bb6d2",
       "name": "Format: Matrix to CSV"
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "=http://{{ $env.API_HOST }}:{{ $env.API_PORT }}/auth/token",
+        "url": "=http://{{ $env.API_URL }}/auth/token",
         "sendBody": true,
         "specifyBody": "json",
         "jsonBody": "={\n  \"username\": \"{{ $env.API_USERNAME }}\",\n  \"password\": \"{{ $env.API_PASSWORD }}\"\n}",
@@ -232,16 +232,16 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.5,
       "position": [
-        752,
-        -112
+        1120,
+        0
       ],
-      "id": "d8e3389b-f2a9-4d9c-8ac8-7c768d78391d",
+      "id": "4c8e2a4a-e4ef-408f-ba43-cf9620dfc276",
       "name": "POST /auth/login"
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "=http://{{ $env.API_HOST }}:{{ $env.API_PORT }}/report/csv",
+        "url": "=http://{{ $env.API_URL }}/report/csv",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -260,10 +260,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.5,
       "position": [
-        976,
-        -112
+        1344,
+        0
       ],
-      "id": "45e12b3c-7e50-4c86-b51b-63f32f89a423",
+      "id": "479381f7-6497-4def-bf0d-2a232d1f05f1",
       "name": "POST /report/csv"
     },
     {
@@ -271,10 +271,10 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -368,
-        -112
+        0,
+        0
       ],
-      "id": "84697055-28cb-488f-a5c8-bf4750e70f8c",
+      "id": "0f6665f0-884b-4b76-86bd-8d09573bdc54",
       "name": "When clicking ‘Execute workflow’"
     }
   ],
@@ -352,12 +352,11 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "3cffe8c7-6f66-4060-bb71-597fcc0cdb0f",
+  "versionId": "57994458-af55-48af-abfb-32f211e4d219",
   "meta": {
-    "templateCredsSetupCompleted": true,
-    "instanceId": "367ecc073a0815d1894217762c6ce35c5ac42281ac6755c8f2a78804997c3b3e"
+    "instanceId": "c753c16e2c53287291f84572c762df7f1add0bce1948237d8281bd77fbbeece9"
   },
   "nodeGroups": [],
-  "id": "d2Vcx28QUotVs1iK",
+  "id": "QTQz9XIYboCxDTnl",
   "tags": []
 }

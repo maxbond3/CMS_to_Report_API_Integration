@@ -1,0 +1,502 @@
+[
+  {
+    "spareCode": "SPARE-1",
+    "spareName": "Spare Part 1",
+    "spareDescription": "Description for spare part 1",
+    "spareType": "BRAKE",
+    "spareStatus": "DAMAGED",
+    "price": "22",
+    "quantity": 37,
+    "updatedAt": "2026-11-05T05:36:44.732975954"
+  },
+  {
+    "spareCode": "SPARE-2",
+    "spareName": "Spare Part 2",
+    "spareDescription": "Description for spare part 2",
+    "spareType": "BRAKE",
+    "spareStatus": "OUT_OF_STOCK",
+    "price": "4",
+    "quantity": 41,
+    "updatedAt": "2026-11-05T05:36:44.733450609"
+  },
+  {
+    "spareCode": "SPARE-3",
+    "spareName": "Spare Part 3",
+    "spareDescription": "Description for spare part 3",
+    "spareType": "BRAKE",
+    "spareStatus": "RESERVED",
+    "price": "38",
+    "quantity": 20,
+    "updatedAt": "2026-11-05T05:36:44.733483980"
+  },
+  {
+    "spareCode": "SPARE-4",
+    "spareName": "Spare Part 4",
+    "spareDescription": "Description for spare part 4",
+    "spareType": "BATTERY",
+    "spareStatus": "DAMAGED",
+    "price": "12",
+    "quantity": 41,
+    "updatedAt": "2026-11-05T05:36:44.733508676"
+  },
+  {
+    "spareCode": "SPARE-5",
+    "spareName": "Spare Part 5",
+    "spareDescription": "Description for spare part 5",
+    "spareType": "TIRE",
+    "spareStatus": "OUT_OF_STOCK",
+    "price": "29",
+    "quantity": 12,
+    "updatedAt": "2026-11-05T05:36:44.733654261"
+  },
+  {
+    "spareCode": "SPARE-6",
+    "spareName": "Spare Part 6",
+    "spareDescription": "Description for spare part 6",
+    "spareType": "TIRE",
+    "spareStatus": "OUT_OF_STOCK",
+    "price": "42",
+    "quantity": 36,
+    "updatedAt": "2026-11-05T05:36:44.733684630"
+  },
+  {
+    "spareCode": "SPARE-7",
+    "spareName": "Spare Part 7",
+    "spareDescription": "Description for spare part 7",
+    "spareType": "ENGINE",
+    "spareStatus": "AVAILABLE",
+    "price": "29",
+    "quantity": 33,
+    "updatedAt": "2026-11-05T05:36:44.733710699"
+  },
+  {
+    "spareCode": "SPARE-8",
+    "spareName": "Spare Part 8",
+    "spareDescription": "Description for spare part 8",
+    "spareType": "GEARBOX",
+    "spareStatus": "RESERVED",
+    "price": "9",
+    "quantity": 49,
+    "updatedAt": "2026-11-05T05:36:44.733735098"
+  },
+  {
+    "spareCode": "SPARE-9",
+    "spareName": "Spare Part 9",
+    "spareDescription": "Description for spare part 9",
+    "spareType": "ENGINE",
+    "spareStatus": "DAMAGED",
+    "price": "29",
+    "quantity": 24,
+    "updatedAt": "2026-11-05T05:36:44.733770484"
+  },
+  {
+    "spareCode": "SPARE-10",
+    "spareName": "Spare Part 10",
+    "spareDescription": "Description for spare part 10",
+    "spareType": "TIRE",
+    "spareStatus": "OUT_OF_STOCK",
+    "price": "38",
+    "quantity": 19,
+    "updatedAt": "2026-11-05T05:36:44.733795767"
+  },
+  {
+    "spareCode": "SPARE-11",
+    "spareName": "Spare Part 11",
+    "spareDescription": "Description for spare part 11",
+    "spareType": "RADIATOR",
+    "spareStatus": "IN_TRANSIT",
+    "price": "25",
+    "quantity": 8,
+    "updatedAt": "2026-11-05T05:36:44.733937656"
+  },
+  {
+    "spareCode": "SPARE-12",
+    "spareName": "Spare Part 12",
+    "spareDescription": "Description for spare part 12",
+    "spareType": "TIRE",
+    "spareStatus": "DAMAGED",
+    "price": "0",
+    "quantity": 43,
+    "updatedAt": "2026-11-05T05:36:44.733985708"
+  },
+  {
+    "spareCode": "SPARE-13",
+    "spareName": "Spare Part 13",
+    "spareDescription": "Description for spare part 13",
+    "spareType": "ENGINE",
+    "spareStatus": "RESERVED",
+    "price": "14",
+    "quantity": 40,
+    "updatedAt": "2026-11-05T05:36:44.734027408"
+  },
+  {
+    "spareCode": "SPARE-14",
+    "spareName": "Spare Part 14",
+    "spareDescription": "Description for spare part 14",
+    "spareType": "RADIATOR",
+    "spareStatus": "AVAILABLE",
+    "price": "45",
+    "quantity": 50,
+    "updatedAt": "2026-11-05T05:36:44.734055723"
+  },
+  {
+    "spareCode": "SPARE-15",
+    "spareName": "Spare Part 15",
+    "spareDescription": "Description for spare part 15",
+    "spareType": "CLUTCH",
+    "spareStatus": "AVAILABLE",
+    "price": "40",
+    "quantity": 47,
+    "updatedAt": "2026-11-05T05:36:44.734079735"
+  },
+  {
+    "spareCode": "SPARE-16",
+    "spareName": "Spare Part 16",
+    "spareDescription": "Description for spare part 16",
+    "spareType": "TIRE",
+    "spareStatus": "AVAILABLE",
+    "price": "37",
+    "quantity": 16,
+    "updatedAt": "2026-11-05T05:36:44.734107624"
+  },
+  {
+    "spareCode": "SPARE-17",
+    "spareName": "Spare Part 17",
+    "spareDescription": "Description for spare part 17",
+    "spareType": "ENGINE",
+    "spareStatus": "RESERVED",
+    "price": "17",
+    "quantity": 25,
+    "updatedAt": "2026-11-05T05:36:44.734207236"
+  },
+  {
+    "spareCode": "SPARE-18",
+    "spareName": "Spare Part 18",
+    "spareDescription": "Description for spare part 18",
+    "spareType": "CLUTCH",
+    "spareStatus": "DAMAGED",
+    "price": "16",
+    "quantity": 10,
+    "updatedAt": "2026-11-05T05:36:44.734237954"
+  },
+  {
+    "spareCode": "SPARE-19",
+    "spareName": "Spare Part 19",
+    "spareDescription": "Description for spare part 19",
+    "spareType": "BRAKE",
+    "spareStatus": "RESERVED",
+    "price": "44",
+    "quantity": 10,
+    "updatedAt": "2026-11-05T05:36:44.734260916"
+  },
+  {
+    "spareCode": "SPARE-20",
+    "spareName": "Spare Part 20",
+    "spareDescription": "Description for spare part 20",
+    "spareType": "CLUTCH",
+    "spareStatus": "OUT_OF_STOCK",
+    "price": "3",
+    "quantity": 39,
+    "updatedAt": "2026-11-05T05:36:44.734296753"
+  },
+  {
+    "spareCode": "SPARE-21",
+    "spareName": "Spare Part 21",
+    "spareDescription": "Description for spare part 21",
+    "spareType": "BATTERY",
+    "spareStatus": "DAMAGED",
+    "price": "32",
+    "quantity": 2,
+    "updatedAt": "2026-11-05T05:36:44.734324033"
+  },
+  {
+    "spareCode": "SPARE-22",
+    "spareName": "Spare Part 22",
+    "spareDescription": "Description for spare part 22",
+    "spareType": "RADIATOR",
+    "spareStatus": "RESERVED",
+    "price": "36",
+    "quantity": 34,
+    "updatedAt": "2026-11-05T05:36:44.734354894"
+  },
+  {
+    "spareCode": "SPARE-23",
+    "spareName": "Spare Part 23",
+    "spareDescription": "Description for spare part 23",
+    "spareType": "TIRE",
+    "spareStatus": "DAMAGED",
+    "price": "31",
+    "quantity": 34,
+    "updatedAt": "2026-11-05T05:36:44.734382254"
+  },
+  {
+    "spareCode": "SPARE-24",
+    "spareName": "Spare Part 24",
+    "spareDescription": "Description for spare part 24",
+    "spareType": "CLUTCH",
+    "spareStatus": "OUT_OF_STOCK",
+    "price": "30",
+    "quantity": 26,
+    "updatedAt": "2026-11-05T05:36:44.734419453"
+  },
+  {
+    "spareCode": "SPARE-25",
+    "spareName": "Spare Part 25",
+    "spareDescription": "Description for spare part 25",
+    "spareType": "BRAKE",
+    "spareStatus": "DAMAGED",
+    "price": "37",
+    "quantity": 32,
+    "updatedAt": "2026-11-05T05:36:44.734446628"
+  },
+  {
+    "spareCode": "SPARE-26",
+    "spareName": "Spare Part 26",
+    "spareDescription": "Description for spare part 26",
+    "spareType": "BATTERY",
+    "spareStatus": "DAMAGED",
+    "price": "28",
+    "quantity": 33,
+    "updatedAt": "2026-11-05T05:36:44.734470471"
+  },
+  {
+    "spareCode": "SPARE-27",
+    "spareName": "Spare Part 27",
+    "spareDescription": "Description for spare part 27",
+    "spareType": "BRAKE",
+    "spareStatus": "RESERVED",
+    "price": "10",
+    "quantity": 32,
+    "updatedAt": "2026-11-05T05:36:44.734505351"
+  },
+  {
+    "spareCode": "SPARE-28",
+    "spareName": "Spare Part 28",
+    "spareDescription": "Description for spare part 28",
+    "spareType": "TIRE",
+    "spareStatus": "AVAILABLE",
+    "price": "46",
+    "quantity": 34,
+    "updatedAt": "2026-11-05T05:36:44.734532178"
+  },
+  {
+    "spareCode": "SPARE-29",
+    "spareName": "Spare Part 29",
+    "spareDescription": "Description for spare part 29",
+    "spareType": "BATTERY",
+    "spareStatus": "RESERVED",
+    "price": "9",
+    "quantity": 40,
+    "updatedAt": "2026-11-05T05:36:44.734582811"
+  },
+  {
+    "spareCode": "SPARE-30",
+    "spareName": "Spare Part 30",
+    "spareDescription": "Description for spare part 30",
+    "spareType": "CLUTCH",
+    "spareStatus": "RESERVED",
+    "price": "44",
+    "quantity": 13,
+    "updatedAt": "2026-11-05T05:36:44.734605961"
+  },
+  {
+    "spareCode": "SPARE-31",
+    "spareName": "Spare Part 31",
+    "spareDescription": "Description for spare part 31",
+    "spareType": "TIRE",
+    "spareStatus": "IN_TRANSIT",
+    "price": "34",
+    "quantity": 6,
+    "updatedAt": "2026-11-05T05:36:44.734641726"
+  },
+  {
+    "spareCode": "SPARE-32",
+    "spareName": "Spare Part 32",
+    "spareDescription": "Description for spare part 32",
+    "spareType": "RADIATOR",
+    "spareStatus": "IN_TRANSIT",
+    "price": "25",
+    "quantity": 11,
+    "updatedAt": "2026-11-05T05:36:44.734668364"
+  },
+  {
+    "spareCode": "SPARE-33",
+    "spareName": "Spare Part 33",
+    "spareDescription": "Description for spare part 33",
+    "spareType": "ENGINE",
+    "spareStatus": "IN_TRANSIT",
+    "price": "17",
+    "quantity": 45,
+    "updatedAt": "2026-11-05T05:36:44.734691245"
+  },
+  {
+    "spareCode": "SPARE-34",
+    "spareName": "Spare Part 34",
+    "spareDescription": "Description for spare part 34",
+    "spareType": "GEARBOX",
+    "spareStatus": "DAMAGED",
+    "price": "14",
+    "quantity": 21,
+    "updatedAt": "2026-11-05T05:36:44.734712889"
+  },
+  {
+    "spareCode": "SPARE-35",
+    "spareName": "Spare Part 35",
+    "spareDescription": "Description for spare part 35",
+    "spareType": "BATTERY",
+    "spareStatus": "OUT_OF_STOCK",
+    "price": "4",
+    "quantity": 36,
+    "updatedAt": "2026-11-05T05:36:44.734761752"
+  },
+  {
+    "spareCode": "SPARE-36",
+    "spareName": "Spare Part 36",
+    "spareDescription": "Description for spare part 36",
+    "spareType": "GEARBOX",
+    "spareStatus": "RESERVED",
+    "price": "17",
+    "quantity": 24,
+    "updatedAt": "2026-11-05T05:36:44.734789093"
+  },
+  {
+    "spareCode": "SPARE-37",
+    "spareName": "Spare Part 37",
+    "spareDescription": "Description for spare part 37",
+    "spareType": "RADIATOR",
+    "spareStatus": "IN_TRANSIT",
+    "price": "12",
+    "quantity": 10,
+    "updatedAt": "2026-11-05T05:36:44.734816588"
+  },
+  {
+    "spareCode": "SPARE-38",
+    "spareName": "Spare Part 38",
+    "spareDescription": "Description for spare part 38",
+    "spareType": "BATTERY",
+    "spareStatus": "OUT_OF_STOCK",
+    "price": "40",
+    "quantity": 16,
+    "updatedAt": "2026-11-05T05:36:44.734843049"
+  },
+  {
+    "spareCode": "SPARE-39",
+    "spareName": "Spare Part 39",
+    "spareDescription": "Description for spare part 39",
+    "spareType": "BRAKE",
+    "spareStatus": "AVAILABLE",
+    "price": "12",
+    "quantity": 9,
+    "updatedAt": "2026-11-05T05:36:44.734885308"
+  },
+  {
+    "spareCode": "SPARE-40",
+    "spareName": "Spare Part 40",
+    "spareDescription": "Description for spare part 40",
+    "spareType": "BATTERY",
+    "spareStatus": "RESERVED",
+    "price": "45",
+    "quantity": 16,
+    "updatedAt": "2026-11-05T05:36:44.734929448"
+  },
+  {
+    "spareCode": "SPARE-41",
+    "spareName": "Spare Part 41",
+    "spareDescription": "Description for spare part 41",
+    "spareType": "GEARBOX",
+    "spareStatus": "DAMAGED",
+    "price": "41",
+    "quantity": 21,
+    "updatedAt": "2026-11-05T05:36:44.734959166"
+  },
+  {
+    "spareCode": "SPARE-42",
+    "spareName": "Spare Part 42",
+    "spareDescription": "Description for spare part 42",
+    "spareType": "ENGINE",
+    "spareStatus": "DAMAGED",
+    "price": "22",
+    "quantity": 32,
+    "updatedAt": "2026-11-05T05:36:44.734985497"
+  },
+  {
+    "spareCode": "SPARE-43",
+    "spareName": "Spare Part 43",
+    "spareDescription": "Description for spare part 43",
+    "spareType": "BATTERY",
+    "spareStatus": "RESERVED",
+    "price": "42",
+    "quantity": 20,
+    "updatedAt": "2026-11-05T05:36:44.735035663"
+  },
+  {
+    "spareCode": "SPARE-44",
+    "spareName": "Spare Part 44",
+    "spareDescription": "Description for spare part 44",
+    "spareType": "BATTERY",
+    "spareStatus": "RESERVED",
+    "price": "41",
+    "quantity": 42,
+    "updatedAt": "2026-11-05T05:36:44.735063425"
+  },
+  {
+    "spareCode": "SPARE-45",
+    "spareName": "Spare Part 45",
+    "spareDescription": "Description for spare part 45",
+    "spareType": "GEARBOX",
+    "spareStatus": "OUT_OF_STOCK",
+    "price": "30",
+    "quantity": 24,
+    "updatedAt": "2026-11-05T05:36:44.735090655"
+  },
+  {
+    "spareCode": "SPARE-46",
+    "spareName": "Spare Part 46",
+    "spareDescription": "Description for spare part 46",
+    "spareType": "BATTERY",
+    "spareStatus": "RESERVED",
+    "price": "18",
+    "quantity": 4,
+    "updatedAt": "2026-11-05T05:36:44.735134712"
+  },
+  {
+    "spareCode": "SPARE-47",
+    "spareName": "Spare Part 47",
+    "spareDescription": "Description for spare part 47",
+    "spareType": "CLUTCH",
+    "spareStatus": "RESERVED",
+    "price": "13",
+    "quantity": 26,
+    "updatedAt": "2026-11-05T05:36:44.735161268"
+  },
+  {
+    "spareCode": "SPARE-48",
+    "spareName": "Spare Part 48",
+    "spareDescription": "Description for spare part 48",
+    "spareType": "BATTERY",
+    "spareStatus": "AVAILABLE",
+    "price": "12",
+    "quantity": 12,
+    "updatedAt": "2026-11-05T05:36:44.735184995"
+  },
+  {
+    "spareCode": "SPARE-49",
+    "spareName": "Spare Part 49",
+    "spareDescription": "Description for spare part 49",
+    "spareType": "BATTERY",
+    "spareStatus": "OUT_OF_STOCK",
+    "price": "2",
+    "quantity": 10,
+    "updatedAt": "2026-11-05T05:36:44.735218350"
+  },
+  {
+    "spareCode": "SPARE-50",
+    "spareName": "Spare Part 50",
+    "spareDescription": "Description for spare part 50",
+    "spareType": "RADIATOR",
+    "spareStatus": "AVAILABLE",
+    "price": "24",
+    "quantity": 9,
+    "updatedAt": "2026-11-05T05:36:44.735554871"
+  }
+]
